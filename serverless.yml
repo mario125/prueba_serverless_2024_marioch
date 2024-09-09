@@ -13,7 +13,6 @@ functions:
       - httpApi: 
           method: POST
           path: /register
-
   getUserAll:
     handler: src/getUsers.getUserAll
     events:

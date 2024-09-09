@@ -28,7 +28,7 @@ Este proyecto es una aplicación serverless utilizando AWS Lambda y Serverless F
 
     ```bash
     git clone <URL_DEL_REPOSITORIO>
-    cd ts-lambda
+  
     ```
 
 2. Instalar las dependencias:
@@ -55,7 +55,18 @@ Este proyecto es una aplicación serverless utilizando AWS Lambda y Serverless F
 | `npm run remove`  | Elimina los recursos desplegados en AWS (entorno dev, región us-east-1). |
 | `npm run test`    | Ejecuta las pruebas unitarias con Jest.                                 |
 
-## Uso
+### Endpoints
+
+| Método | URL                                                                                      | Body                  |
+|--------|-------------------------------------------------------------------------------------------|-----------------------|
+| GET    | https://99zox9pbpi.execute-api.us-east-1.amazonaws.com/dev/getUserAll                     | N/A                   |
+| POST   | https://99zox9pbpi.execute-api.us-east-1.amazonaws.com/dev/getUserId                      | { "id": 1 }           |
+| GET    | https://99zox9pbpi.execute-api.us-east-1.amazonaws.com/dev/getSwapiPeopleAll              | N/A                   |
+| POST   | https://99zox9pbpi.execute-api.us-east-1.amazonaws.com/dev/getSwapiPeopleId               |  { "id": 1 }                   |
+| GET    | https://99zox9pbpi.execute-api.us-east-1.amazonaws.com/dev/getSwapiPeopleAll              | N/A                   |
+| POST   | https://99zox9pbpi.execute-api.us-east-1.amazonaws.com/dev/getSwapiPeopleId               |  { "id": 1 }1                  |
+| POST   | https://k6jiva8trk.execute-api.us-east-1.amazonaws.com/register                           | { "nombre": "PEPE", "correo_electronico": "jmuspeda3ed@gmail.com", "contrasena": "Mario125@Lima", "fecha_creacion": "2024-02-26 00:15:07"}                  |
+
 
 ### Endpoints disponibles
 
