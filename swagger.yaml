@@ -1,0 +1,90 @@
+openapi: 3.0.0
+info:
+  title: API de Usuarios
+  version: 1.0.0
+paths:
+  /registerUser:
+    post:
+      summary: Registra un nuevo usuario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                correo_electronico:
+                  type: string
+                contrasena:
+                  type: string
+                fecha_creacion:
+                  type: string
+      responses:
+        '200':
+          description: Usuario registrado correctamente
+        '400':
+          description: Error en la validación de los datos
+
+  /getUserAll:
+    get:
+      summary: Obtiene todos los usuarios
+      responses:
+        '200':
+          description: Lista de usuarios encontrados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  users:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+
+  /getUserId:
+    post:
+      summary: Obtiene un usuario por su ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        '200':
+          description: Usuario encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  user:
+                    $ref: '#/components/schemas/User'
+        '400':
+          description: Error en la validación del ID
+        '404':
+          description: Usuario no encontrado
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        nombre:
+          type: string
+        correo_electronico:
+          type: string
+        contrasena:
+          type: string
+        fecha_creacion:
+          type: string
